@@ -1,8 +1,8 @@
-import { Button } from "@repo/ui/button";
+import {Button} from "@repo/ui/button";
+import {Popover} from "@repo/ui/popover"
 import { Card } from "@repo/ui/card";
 import { Pencil, Share2, Users2, Sparkles, Github, Download } from "lucide-react";
 import Link from "next/link";
-
 function App() {
   return (
     <div className="min-h-screen bg-background">
@@ -20,17 +20,18 @@ function App() {
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <Link href={"/signin"}>
-                <Button variant={"primary"} size="lg" className="h-12 px-6">
+                <Button variant={"destructive"} size="lg" className="h-12 px-6">
                   Sign in
                   <Pencil className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
               <Link href="/signup">
-                <Button variant="outline" size="lg" className="h-12 px-6">
+                <Button variant="destructive" size="lg" className="h-12 px-6">
                   Sign up
                 </Button>
               </Link>
             </div>
+            <Popover/>
           </div>
         </div>
       </header>

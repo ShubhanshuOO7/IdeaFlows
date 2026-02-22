@@ -3,15 +3,14 @@ import jwt from "jsonwebtoken";
 import { JWT_SECRET } from '@repo/backend-common/config';
 import { middleware } from "./middleware";
 import { CreateUserSchema, SigninSchema, CreateRoomSchema } from "@repo/common/types";
-import { prismaClient } from "@repo/db/client";
+import {prismaClient} from "@repo/db/client"
 import cors from "cors";
 
 const app = express();
 app.use(express.json());
 app.use(cors())
 
-app.post("/signup", async (req, res) => {
-
+app.post("/signup", async ({req,res}:any) => {
     const parsedData = CreateUserSchema.safeParse(req.body);
     if (!parsedData.success) {
         console.log(parsedData.error);
@@ -29,12 +28,14 @@ app.post("/signup", async (req, res) => {
                 name: parsedData.data.name
             }
         })
-        res.json({
+        return  res.status(200).json({
             userId: user.id
         })
     } catch(e) {
+        console.log(e);
         res.status(411).json({
-            message: "User already exists with this username"
+            message: `Got some errors : ${e}`,
+            
         })
     }
 })
