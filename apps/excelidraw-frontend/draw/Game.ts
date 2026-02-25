@@ -59,7 +59,6 @@ export class Game {
 
     async init() {
         this.existingShapes = await getExistingShapes(this.roomId);
-        console.log(this.existingShapes);
         this.clearCanvas();
     }
 
@@ -85,7 +84,6 @@ export class Game {
                 this.ctx.strokeStyle = "rgba(255, 255, 255)"
                 this.ctx.strokeRect(shape.x, shape.y, shape.width, shape.height);
             } else if (shape.type === "circle") {
-                console.log(shape);
                 this.ctx.beginPath();
                 this.ctx.arc(shape.centerX, shape.centerY, Math.abs(shape.radius), 0, Math.PI * 2);
                 this.ctx.stroke();
@@ -146,7 +144,6 @@ export class Game {
             this.clearCanvas();
             this.ctx.strokeStyle = "rgba(255, 255, 255)"
             const selectedTool = this.selectedTool;
-            console.log(selectedTool)
             if (selectedTool === "rect") {
                 this.ctx.strokeRect(this.startX, this.startY, width, height);   
             } else if (selectedTool === "circle") {

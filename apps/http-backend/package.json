@@ -13,12 +13,12 @@
     "@types/jsonwebtoken": "^9.0.7",
     "cors": "^2.8.5",
     "express": "^4.21.2",
-    "jsonwebtoken": "^9.0.2"
-  },
-  "devDependencies": {
+    "jsonwebtoken": "^9.0.2",
     "@repo/backend-common": "workspace:*",
     "@repo/common": "workspace:*",
-    "@repo/typescript-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*"
+  },
+  "devDependencies": {
     "@types/express": "^5.0.0"
   },
   "keywords": [],

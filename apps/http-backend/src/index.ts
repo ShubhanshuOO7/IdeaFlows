@@ -13,7 +13,6 @@ app.use(cors())
 app.post("/signup", async ({req,res}:any) => {
     const parsedData = CreateUserSchema.safeParse(req.body);
     if (!parsedData.success) {
-        console.log(parsedData.error);
         res.json({
             message: "Incorrect inputs"
         })
@@ -32,7 +31,6 @@ app.post("/signup", async ({req,res}:any) => {
             userId: user.id
         })
     } catch(e) {
-        console.log(e);
         res.status(411).json({
             message: `Got some errors : ${e}`,
             
@@ -105,7 +103,6 @@ app.post("/room", middleware, async (req, res) => {
 app.get("/chats/:roomId", async (req, res) => {
     try {
         const roomId = Number(req.params.roomId);
-        console.log(req.params.roomId);
         const messages = await prismaClient.chat.findMany({
             where: {
                 roomId: roomId
@@ -120,7 +117,6 @@ app.get("/chats/:roomId", async (req, res) => {
             messages
         })
     } catch(e) {
-        console.log(e);
         res.json({
             messages: []
         })
