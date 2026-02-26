@@ -141,6 +141,7 @@ importers:
       '@repo/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
+    devDependencies:
       '@types/node':
         specifier: ^22.10.5
         version: 22.10.5
