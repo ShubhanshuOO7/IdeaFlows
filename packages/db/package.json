@@ -6,7 +6,7 @@
     "./client": "./src/index.ts"
   },
   "scripts": {
-    "generate":"prisma generate"
+    "generate": "prisma generate"
   },
   "devDependencies": {
     "@repo/typescript-config": "workspace:*",
@@ -18,7 +18,7 @@
   "description": "",
   "dependencies": {
     "@prisma/adapter-pg": "^7.1.0",
-    "@prisma/client": "7.1.0",
-    "prisma": "^7.1.0"
+    "@prisma/client": "6.19.2",
+    "prisma": "^6.19.2"
   }
 }

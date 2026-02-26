@@ -7,7 +7,7 @@
        "outputs":[]
     },
     "build": {
-      "dependsOn": ["^build","generate"],
+      "dependsOn": ["^build"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
       "outputs": ["dist/**",".next/**", "!.next/cache/**"],
       "env":["DATABASE_URL","JWT_SECRET"]
