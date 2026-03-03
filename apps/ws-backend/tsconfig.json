@@ -1,9 +1,17 @@
 {
-    "extends": "@repo/typescript-config/base.json",
-    "compilerOptions": {
-        "rootDir": "./src",
-        "outDir": "./dist",
-        "declaration": true
-    },
-    "include": ["src"]
+  "extends": "@repo/typescript-config/base.json",
+  "compilerOptions": {
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "baseUrl": ".",  // Ensures relatives start from ws-backend root
+    "paths": {
+      "@repo/backend-common/*": [
+        "../../packages/backend-common/src/*"  // Variant A: If ws-backend is in apps/ (common)
+      ],
+      "@repo/db/*": [
+        "../../packages/db/src/*"
+      ]
+      // If your structure is flat (ws-backend at root level), use "../packages/..." instead
+    }
+  }
 }
