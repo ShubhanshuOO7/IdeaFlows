@@ -2,7 +2,7 @@ import http from "http";
 import { WebSocket, WebSocketServer } from "ws";
 import jwt from "jsonwebtoken";
 import { JWT_SECRET } from "@repo/backend-common/config";
-import { prismaClient } from "@repo/db/client";
+import { prismaClient } from "@repo/db/client"
 
 const port = Number(process.env.PORT) || 8080;
 
