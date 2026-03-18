@@ -8,7 +8,10 @@ import cors from "cors";
 
 const app = express();
 app.use(express.json());
-app.use(cors())
+app.use(cors({
+    origin: ["http://localhost:3000","https://idea-flow-excalidraw-frontend.vercel.app"],
+    credentials: true
+}));
 
 app.post("/signup", async ({req,res}:any) => {
     const parsedData = CreateUserSchema.safeParse(req.body);
