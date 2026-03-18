@@ -9,7 +9,7 @@ import cors from "cors";
 const app = express();
 app.use(express.json());
 app.use(cors({
-    origin: ["http://localhost:3000","https://idea-flow-excalidraw-frontend.vercel.app"],
+    origin: ["http://localhost:3000","https://idea-flow-excalidraw-frontend-gx4t-khaki.vercel.app"],
     credentials: true
 }));
 
